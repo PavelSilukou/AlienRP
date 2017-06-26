@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <SolidColorBrush x:Key="LightFontColor1">#B9B9BA</SolidColorBrush>
+    <SolidColorBrush x:Key="LightFontColor2">#EEEEEE</SolidColorBrush>
+
+    <SolidColorBrush x:Key="DarkFontColor1">#26283f</SolidColorBrush>
+
+    <SolidColorBrush x:Key="ErrorColor">#ff4b4b</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessColor">#46e735</SolidColorBrush>
+
+    <SolidColorBrush x:Key="MainColor1">#26283f</SolidColorBrush>
+    <SolidColorBrush x:Key="MainColor2">#3E4153</SolidColorBrush>
+    <SolidColorBrush x:Key="MainColor3">#565865</SolidColorBrush>
+
+    <SolidColorBrush x:Key="AccentColor1">#FFB858</SolidColorBrush>
+    <SolidColorBrush x:Key="AccentColor2">#ff9a16</SolidColorBrush>
+
+    <Color x:Key="ChannelOpacityColor">#FF3E4153</Color>
+    
+</ResourceDictionary>

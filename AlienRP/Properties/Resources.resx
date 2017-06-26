@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LoginWindow_SocialText" xml:space="preserve">
+    <value>Use the same email address as for your social network account. You must specify the password on the account page</value>
+  </data>
+  <data name="LoginWindow_NoInternet" xml:space="preserve">
+    <value>Internet connection error. Check your connection and try again</value>
+  </data>
+  <data name="LoginWindow_EmailCaption" xml:space="preserve">
+    <value>EMAIL</value>
+  </data>
+  <data name="LoginWindow_EmailError1" xml:space="preserve">
+    <value>The Email field cannot be empty</value>
+  </data>
+  <data name="LoginWindow_EmailError2" xml:space="preserve">
+    <value>Invalid email address</value>
+  </data>
+  <data name="LoginWindow_FormTitle" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+  <data name="LoginWindow_RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="LoginWindow_LoginButton" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="LoginWindow_LoginPasswordError" xml:space="preserve">
+    <value>Invalid login or password</value>
+  </data>
+  <data name="LoginWindow_NotPremium" xml:space="preserve">
+    <value>You are not a Premium Member</value>
+  </data>
+  <data name="LoginWindow_PasswordCaption" xml:space="preserve">
+    <value>PASSWORD</value>
+  </data>
+  <data name="LoginWindow_PasswordError" xml:space="preserve">
+    <value>The Password field cannot be empty</value>
+  </data>
+  <data name="ARPMessageBox_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ARPMessageBox_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ARPMessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ARPMessageBox_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="MainWindow_MenuChannels" xml:space="preserve">
+    <value>Channels</value>
+  </data>
+  <data name="MainWindow_MenuSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="HotkeysControl_Action0" xml:space="preserve">
+    <value>Start / Stop</value>
+  </data>
+  <data name="HotkeysControl_Action1" xml:space="preserve">
+    <value>Volume up</value>
+  </data>
+  <data name="HotkeysControl_Action2" xml:space="preserve">
+    <value>Volume down</value>
+  </data>
+  <data name="HotkeysControl_Action3" xml:space="preserve">
+    <value>Mute</value>
+  </data>
+  <data name="HotkeysControl_Action4" xml:space="preserve">
+    <value>Vote UP</value>
+  </data>
+  <data name="HotkeysControl_Action5" xml:space="preserve">
+    <value>Vote DOWN</value>
+  </data>
+  <data name="HotkeysControl_ActionTitle" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="HotkeysControl_GlobalTitle" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="HotkeysControl_LocalTitle" xml:space="preserve">
+    <value>Локальные</value>
+  </data>
+  <data name="HotkeysControl_Title" xml:space="preserve">
+    <value>Hotkeys</value>
+  </data>
+  <data name="QualityControls_Title" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="HotkeysControl_GlobalTitle_comment" xml:space="preserve">
+    <value>(Ctrl + Shift)</value>
+  </data>
+  <data name="LoadingControl_RadioChannels" xml:space="preserve">
+    <value>Loading channels...</value>
+  </data>
+  <data name="LoginWindow_SocialLink" xml:space="preserve">
+    <value>Go to the account page page on {0}</value>
+  </data>
+  <data name="RadioChannelsControl_NoInternet" xml:space="preserve">
+    <value>Internet connection error. Check your connection and try again</value>
+  </data>
+  <data name="RadioChannelsControl_NoInternetButtonText" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="RadioChannelsControl_MemberError_LogoutButton" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="RadioChannelsControl_MemberError_Text" xml:space="preserve">
+    <value>Authentication error. Please re-login</value>
+  </data>
+  <data name="RadioChannelsControl_MemberError_TryAgain" xml:space="preserve">
+    <value>Try again</value>
+  </data>
+  <data name="PlayerControl_ChannelError" xml:space="preserve">
+    <value>The channel not found. Reload channels list and try again</value>
+  </data>
+  <data name="PlayerControl_LogoutButton" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="PlayerControl_MemberError" xml:space="preserve">
+    <value>Authentication error. Please re-login</value>
+  </data>
+  <data name="PlayerControl_NoInternet_Text" xml:space="preserve">
+    <value>Internet connection error. Check your connection and try again</value>
+  </data>
+  <data name="PlayerControl_ReloadChannelsButton" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="PlayerControl_StreamlistError" xml:space="preserve">
+    <value>Audio stream error. Please try again later or select another channel</value>
+  </data>
+  <data name="PlayerControl_TryAgainButton" xml:space="preserve">
+    <value>Try again</value>
+  </data>
+  <data name="LoginWindow_ForgotLink" xml:space="preserve">
+    <value>Go to the password recovery page on {0}</value>
+  </data>
+  <data name="LoginWindow_ForgotText" xml:space="preserve">
+    <value>If you forgot your password, go to the password recovery page</value>
+  </data>
+  <data name="LoginWindow_ForgotTitle" xml:space="preserve">
+    <value>Forgot password?</value>
+  </data>
+  <data name="LoginWindow_SocialTitle" xml:space="preserve">
+    <value>Login with FB or G+</value>
+  </data>
+  <data name="HotkeyArrowDown" xml:space="preserve">
+    <value>Down arrow</value>
+  </data>
+  <data name="HotkeyArrowLeft" xml:space="preserve">
+    <value>Left arrow</value>
+  </data>
+  <data name="HotkeyArrowRight" xml:space="preserve">
+    <value>Right arrow</value>
+  </data>
+  <data name="HotkeyArrowUp" xml:space="preserve">
+    <value>Up arrow</value>
+  </data>
+  <data name="HotkeyNotValid" xml:space="preserve">
+    <value>Invalid button</value>
+  </data>
+  <data name="HotkeysControl_Action6" xml:space="preserve">
+    <value>Delete vote</value>
+  </data>
+  <data name="PlayerControl_BadRequestError" xml:space="preserve">
+    <value>Unknown error. Please try again later</value>
+  </data>
+  <data name="PlayerControl_Buffering" xml:space="preserve">
+    <value>Buffering...</value>
+  </data>
+  <data name="PlayerControl_GetNewTrack" xml:space="preserve">
+    <value>Getting information about next track</value>
+  </data>
+  <data name="PlayerControl_GetTrack" xml:space="preserve">
+    <value>Getting information about current track</value>
+  </data>
+  <data name="PlayerControl_Reconnect" xml:space="preserve">
+    <value>Reconnect</value>
+  </data>
+  <data name="MainWindow_SelectChannel" xml:space="preserve">
+    <value>Select a channel from the list below</value>
+  </data>
+  <data name="SettingsControl_SaveButton" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icomoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fonts\icomoon.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NotoSans_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fonts\NotoSans-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="classical_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\classical_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="classical_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\classical_text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="di_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\di_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="di_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\di_text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jazz_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\jazz_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jazz_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\jazz_text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rock_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\rock_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rock_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\rock_text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tunes_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\tunes_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tunes_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\tunes_text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainWindow_MenuRadioStations" xml:space="preserve">
+    <value>Radio</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\logo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainWindow_SelectSettings" xml:space="preserve">
+    <value>Change settings</value>
+  </data>
+  <data name="MainWindow_SelectStation" xml:space="preserve">
+    <value>Select a station from the list below</value>
+  </data>
+  <data name="UserSettingsControl_LoginInfo" xml:space="preserve">
+    <value>You are logged as </value>
+  </data>
+  <data name="UserSettingsControl_LogoutButton" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="UserSettingsControl_Title" xml:space="preserve">
+    <value>User</value>
+  </data>
+</root>

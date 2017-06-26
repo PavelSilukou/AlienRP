@@ -1,0 +1,21 @@
+﻿<Application x:Class="AlienRP.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Windows/LoginWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="StyleResources/Decorators.xaml"/>
+                <ResourceDictionary Source="StyleResources/Colors.xaml"/>
+                <ResourceDictionary Source="StyleResources/Fonts.xaml"/>
+                <ResourceDictionary Source="StyleResources/ScrollViewer.xaml"/>
+                <ResourceDictionary Source="StyleResources/Buttons.xaml"/>
+                <ResourceDictionary Source="StyleResources/ListBoxes.xaml"/>
+                <ResourceDictionary Source="StyleResources/ProgressBars.xaml"/>
+                <ResourceDictionary Source="StyleResources/Sliders.xaml"/>
+                <ResourceDictionary Source="StyleResources/TabControls.xaml"/>
+                <ResourceDictionary Source="StyleResources/TextBoxes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

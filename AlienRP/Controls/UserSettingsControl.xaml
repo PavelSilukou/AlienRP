@@ -1,0 +1,50 @@
+﻿<!--
+* ***** BEGIN GPL LICENSE BLOCK*****
+
+* Copyright © 2017 Pavel Silukou
+
+* This file is part of AlienRP.
+
+* AlienRP is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* AlienRP is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with AlienRP.  If not, see<http://www.gnu.org/licenses/> .
+
+* ***** END GPL LICENSE BLOCK*****
+-->
+    
+<UserControl x:Class="AlienRP.Controls.UserSettingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AlienRP.Controls"
+             xmlns:prop = "clr-namespace:AlienRP.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>
+        <TextBlock Margin="0, 0, 0, 10" Text="{x:Static prop:Resources.UserSettingsControl_Title}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource FontRegular}" Foreground="{StaticResource LightFontColor2}" FontSize="18"/>
+        <StackPanel HorizontalAlignment="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <TextBlock Text="{x:Static prop:Resources.UserSettingsControl_LoginInfo}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource LightFontColor1}" FontFamily="{StaticResource FontRegular}" FontSize="14" />
+                    <TextBlock x:Name="nameText" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource LightFontColor2}" FontFamily="{StaticResource FontRegular}" FontSize="14" />
+                </StackPanel>
+                
+                <Button Margin="0, 10, 0, 0" Height="30" Width="100" Click="LogoutButtonClick" Grid.Row="1" Content="{x:Static prop:Resources.UserSettingsControl_LogoutButton}" Style="{StaticResource PrimaryButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

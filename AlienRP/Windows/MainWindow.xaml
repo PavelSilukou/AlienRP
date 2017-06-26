@@ -1,0 +1,142 @@
+﻿<!--
+* ***** BEGIN GPL LICENSE BLOCK*****
+
+* Copyright © 2017 Pavel Silukou
+
+* This file is part of AlienRP.
+
+* AlienRP is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* AlienRP is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with AlienRP.  If not, see<http://www.gnu.org/licenses/> .
+
+* ***** END GPL LICENSE BLOCK*****
+-->
+    
+<Window x:Class="AlienRP.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="clr-namespace:AlienRP.Controls"
+        xmlns:prop = "clr-namespace:AlienRP.Properties"
+        Title="AlienRP"
+        x:Name="MainWindowName" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True" Tag="" Icon="/Resources/images/logo.ico" Width="410" MinWidth="410" MaxWidth="410" Closed="MainControlClosed">
+    <Window.Resources>
+        <Style x:Key="RectBorder" TargetType="Rectangle">
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="Fill" Value="Transparent" />
+            <Setter Property="Tag" Value="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
+            <EventSetter Event="MouseLeftButtonDown" Handler="ResizeInit"/>
+            <EventSetter Event="MouseLeftButtonUp" Handler="ResizeEnd"/>
+            <EventSetter Event="MouseMove" Handler="ResizeingForm"/>
+        </Style>
+
+        <Style x:Key="WindowStyle" TargetType="{x:Type Window}">
+            <Setter Property="WindowStyle" Value="None"/>
+            <Setter Property="ResizeMode" Value="NoResize" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Border Margin="5" CornerRadius="6">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10"
+                                  Color="#333333"
+                                  Opacity="1"
+                                  ShadowDepth="0"
+                                  Direction="0" />
+                            </Border.Effect>
+                            <Grid>
+                                <ContentPresenter />
+                                <Rectangle x:Name="topSizeGrip" Height="4" VerticalAlignment="Top" Cursor="SizeNS" Style="{StaticResource RectBorder}" />
+                                <Rectangle x:Name="bottomSizeGrip" Height="4" VerticalAlignment="Bottom" Cursor="SizeNS" Style="{StaticResource RectBorder}" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Border UseLayoutRounding="True" CornerRadius="6" Margin="5" Background="{StaticResource MainColor2}">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="8"
+                                  Color="#333333"
+                                  Opacity="1"
+                                  ShadowDepth="0"
+                                  Direction="0" />
+        </Border.Effect>
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="Transparent">
+                    <Grid x:Name="mainGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid Height="26" Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="24"/>
+                                <ColumnDefinition Width="24"/>
+                                <ColumnDefinition Width="24"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Background="Transparent" Grid.Column="0" MouseLeftButtonDown="DragRectangleMouseLeftButtonDown" MouseLeftButtonUp="DragRectangleMouseLeftButtonUp">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Margin="4, 0, 4, 0" Height="22" RenderOptions.BitmapScalingMode="HighQuality" Source="/Resources/images/logo.ico" HorizontalAlignment="Left" ></Image>
+                                    <TextBlock x:Name="accountText" Visibility="Collapsed" Grid.Column="1" VerticalAlignment="Center" FontFamily="{StaticResource FontRegular}" Foreground="{StaticResource DarkFontColor1}" FontSize="14" HorizontalAlignment="Center" />
+                                </Grid>
+                            </Border>
+                            <ToggleButton Margin="-3, 2, -3, 0" x:Name="collapseButton" Visibility="Visible" Grid.Column="1" Style="{StaticResource CollapseButtonStyle}" Content="" FontSize="28" Click="CollapseButtonClick"/>
+                            <Button x:Name="minimizeButton" Grid.Column="2" Style="{StaticResource WindowButtonStyle}" Click="MinimizeToTrayButtonClick">
+                                <Path MaxHeight="9" MaxWidth="9" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" RenderOptions.EdgeMode="Aliased" Data="M0,8 H8 M0,7 H8" />
+                            </Button>
+                            <Button x:Name="exitButton" Grid.Column="3" Style="{StaticResource WindowButtonStyle}" Content="" FontSize="18"  Click="ExitButtonClick"/>
+                        </Grid>
+                        <res:PlayerControl Visibility="Visible" Grid.Row="1" x:Name="playerControl" />
+                    </Grid>
+                </Border>
+
+                <Border Visibility="Visible" Grid.Row="1" x:Name="menuGrid">
+                    <Grid>
+                        <Grid.OpacityMask>
+                            <VisualBrush Visual="{Binding ElementName=PART_OpacityBorder}"/>
+                        </Grid.OpacityMask>
+
+                        <Border x:Name="PART_OpacityBorder" CornerRadius="0, 0, 6, 6" Background="{StaticResource MainColor2}" />
+                        <TabControl Style="{StaticResource MainMenuTabControlStyle}">
+                            <TabItem Selector.Selected="RadioStationsTabItemSelected" x:Name="radioStationsTabItem" HorizontalAlignment="Center" Style="{StaticResource MainMenuTabItemStyle}" Header="{x:Static prop:Resources.MainWindow_MenuRadioStations}">
+                                <res:RadioStationsControl x:Name="radioStationsControl"/>
+                            </TabItem>
+
+                            <TabItem Selector.Selected="RadioChannelsTabItemSelected" x:Name="radioChannelsTabItem" HorizontalAlignment="Center" Style="{StaticResource MainMenuTabItemStyle}" Header="{x:Static prop:Resources.MainWindow_MenuChannels}">
+                                <res:RadioChannelsControl x:Name="radioChannelsControl"/>
+                            </TabItem>
+
+                            <TabItem Selector.Selected="SettingsTabItemSelected" x:Name="settingsTabItem" DockPanel.Dock="Right" HorizontalAlignment="Right" Style="{StaticResource MainMenuTabItemIconStyle}" Header="">
+                                <res:SettingsControl x:Name="settingsControl" />
+                            </TabItem>
+
+                        </TabControl>
+                    </Grid>
+                </Border>
+                <Rectangle Margin="0, -5, 0, 0" Grid.Row="0" x:Name="topSizeGrip" Height="4" VerticalAlignment="Top" Cursor="SizeNS" Style="{StaticResource RectBorder}" />
+                <Rectangle Margin="0, 0, 0, -5" Grid.Row="1" x:Name="bottomSizeGrip" Height="4" VerticalAlignment="Bottom" Cursor="SizeNS" Style="{StaticResource RectBorder}" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
