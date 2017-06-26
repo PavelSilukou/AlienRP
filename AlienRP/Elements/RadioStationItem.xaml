@@ -1,0 +1,43 @@
+﻿<!--
+* ***** BEGIN GPL LICENSE BLOCK*****
+
+* Copyright © 2017 Pavel Silukou
+
+* This file is part of AlienRP.
+
+* AlienRP is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* AlienRP is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with AlienRP.  If not, see<http://www.gnu.org/licenses/> .
+
+* ***** END GPL LICENSE BLOCK*****
+-->
+    
+<UserControl x:Class="AlienRP.Elements.RadioStationItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AlienRP"
+             mc:Ignorable="d" 
+             d:DesignWidth="400" MinHeight="100" MaxHeight="200">
+
+    <Border UseLayoutRounding="True" Cursor="Hand" x:Name="outerBorder" MinHeight="100" MaxHeight="200" Width="400" Background="Transparent" MouseEnter="OuterBorderMouseEnter" MouseLeave="OuterBorderMouseLeave" MouseLeftButtonDown="RadioChecked">
+        <Grid Margin="0, 0, 0, 1">
+            <Image x:Name="backImage" HorizontalAlignment="Center" MinHeight="100" MaxHeight="200" Width="400" VerticalAlignment="Center" Stretch="UniformToFill">
+                <Image.OpacityMask>
+                    <SolidColorBrush x:Name="PART_OpacityMask" Color="{StaticResource ChannelOpacityColor}" Opacity="0.7" />
+                </Image.OpacityMask>
+            </Image>
+            <Image x:Name="textImage" Margin="20, 0, 0, 25" Height="50" Width="400" VerticalAlignment="Bottom" Stretch="Fill" />
+        </Grid>
+    </Border>
+</UserControl>
