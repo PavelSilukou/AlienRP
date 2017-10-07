@@ -26,6 +26,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.ComponentModel;
 using System.Threading;
+using System.IO; // Jevan - 8 Oct 2017
 
 namespace AlienRP.Controls
 {
@@ -110,6 +111,8 @@ namespace AlienRP.Controls
             Quality quality = RadioAPI.GetQuality();
             qualityText.Text = quality.format + " " + quality.bitrate;
             currentQualityInfoText.Text = quality.format + " " + quality.bitrate;
+            logEntry("DateTime now: " + DateTime.Now.ToString()); // Jevan - 8 October 2017
+            logEntry("SetQuality: " + currentQualityInfoText.Text + "\n\r\n\r"); // Jevan - 8 October 2017
         }
 
         public void ChangeQuality()
@@ -171,6 +174,9 @@ namespace AlienRP.Controls
 
         private void Play()
         {
+            logEntry("DateTime now: " + DateTime.Now.ToString()); // Jevan - 8 October 2017
+            logEntry("Play\n\r\n\r"); // Jevan - 8 October 2017
+
             playButton.IsChecked = true;
             ShowInfo(1);
             
@@ -182,6 +188,9 @@ namespace AlienRP.Controls
 
         private void Stop()
         {
+            logEntry("DateTime now: " + DateTime.Now.ToString()); // Jevan - 8 October 2017
+            logEntry("Stop\n\r\n\r"); // Jevan - 8 October 2017
+
             playButton.IsChecked = false;
             
             if (getAudioLinksWorker.IsBusy)
@@ -331,6 +340,17 @@ namespace AlienRP.Controls
             trackTimeline.Start((RadioAPI.ConvertToUnixTimestamp(DateTime.UtcNow) - PlayerSettings.timeOffset) - currentTrack.startTime, currentTrack.duration);
         }
 
+        // https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-open-and-append-to-a-log-file
+        // Jevan - 8 October 2017
+        private void logEntry(String txt)
+        {
+            using (StreamWriter w = File.AppendText("AlienRP-log.txt"))
+            {
+                TextWriter tw = w;
+                tw.WriteLine("{0}", txt);
+            }
+        }
+
         private void ChangePlayerState(int state)
         {
             switch (state)
@@ -339,6 +359,12 @@ namespace AlienRP.Controls
                     {
                         currentStationInfoText.Text = RadioAPI.GetRadioStationName();
                         currentChannelInfoText.Text = PlayerSettings.currentChannelName;
+
+                        logEntry("DateTime now: " + DateTime.Now.ToString()); // Jevan - 8 October 2017
+                        logEntry("Current Station: " + currentStationInfoText.Text + "\n\r"); // Jevan - 8 October 2017
+                        logEntry("Current Channel: " + currentChannelInfoText.Text + "\n\r"); // Jevan - 8 October 2017
+                        logEntry("Current Quality: " + currentQualityInfoText.Text + "\n\r"); // Jevan - 8 October 2017
+                        logEntry("\n\r"); // Jevan - 8 October 2017
 
                         currentChannelInfoGrid.Visibility = Visibility.Visible;
                         trackInfoGrid.Visibility = Visibility.Collapsed;
@@ -380,6 +406,18 @@ namespace AlienRP.Controls
                         artistName.SetText(currentTrack.artistName);
                         channelName.Text = PlayerSettings.currentChannelName;
                         voteButtons.IsEnabled = true;
+
+                        logEntry("DateTime now: " + DateTime.Now.ToString()); // Jevan - 8 October 2017
+                        logEntry("Current Track: " + currentTrack.trackName + "\n\r"); // Jevan - 8 October 2017
+                        logEntry("Current Artist: " + currentTrack.artistName + "\n\r"); // Jevan - 8 October 2017
+                        decimal durationMinutes = Math.Truncate((decimal)(currentTrack.duration / 60f)); // Jevan - 8 October 2017
+                        decimal durationSeconds = (decimal)((currentTrack.duration / 60f - (float)durationMinutes) * 60f); // Jevan - 8 October 2017
+                        double startingTime = (RadioAPI.ConvertToUnixTimestamp(DateTime.UtcNow) - PlayerSettings.timeOffset) - currentTrack.startTime; // Jevan - 8 October 2017
+                        decimal startTimeMinutes = Math.Truncate((decimal)(startingTime / 60f)); // Jevan - 8 October 2017
+                        decimal startTimeSeconds = (decimal)((startingTime / 60f - (float)startTimeMinutes) * 60f); // Jevan - 8 October 2017
+                        logEntry("Current Track start time: " + startTimeMinutes + ":" + startTimeSeconds + "\n\r"); // Jevan - 8 October 2017
+                        logEntry("Current Track duration: " + durationMinutes + ":" + durationSeconds + "\n\r"); // Jevan - 8 October 2017
+                        logEntry("\n\r"); // Jevan - 8 October 2017
 
                         currentChannelInfoGrid.Visibility = Visibility.Collapsed;
                         trackInfoGrid.Visibility = Visibility.Visible;
@@ -425,6 +463,8 @@ namespace AlienRP.Controls
 
         public void LogoutAction()
         {
+            logEntry("DateTime now: " + DateTime.Now.ToString()); // Jevan - 8 October 2017
+            logEntry("Logout\n\r");  // Jevan - 8 October 2017
             Stop();
         }
     }
