@@ -27,9 +27,9 @@ using AlienRP.Windows;
 
 namespace AlienRP.Controls
 {
-    public partial class UserSettingsControl : UserControl
+    public partial class AboutControl : UserControl
     {
-        public UserSettingsControl()
+        public AboutControl()
         {
             InitializeComponent();
         }
@@ -39,7 +39,7 @@ namespace AlienRP.Controls
             MainWindow.Instance.Logout();
         }
 
-        public void LoadUserSettings()
+        public void LoadAboutControl()
         {
             nameText.Text = MainWindow.Instance.accountText.Text;
         }

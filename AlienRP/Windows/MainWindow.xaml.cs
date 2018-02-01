@@ -37,7 +37,17 @@ namespace AlienRP.Windows
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            //MOCKUP
+            User.firstName = "Pavel";
+            User.lastName = "Silukov";
+            User.apiKey = "c23294d4d2513ef9dfb32e770de33580";
+            //User.apiKey = "c23294d4d2513ef9dfb32e770de33581";
+            User.id = "9064891";
+            //User.id = "2";
+            User.listenKey = "2f39035dfcb94670e23cb6d5";
+            ///
+
             accountText.Text = User.firstName + " " + User.lastName;
             accountText.Visibility = Visibility.Visible;
 
@@ -336,6 +346,15 @@ namespace AlienRP.Windows
             if (tab != null)
             {
                 settingsControl.LoadSettings();
+            }
+        }
+
+        private void AboutTabItemSelected(object sender, RoutedEventArgs e)
+        {
+            var tab = sender as TabItem;
+            if (tab != null)
+            {
+                aboutControl.LoadAboutControl();
             }
         }
     }

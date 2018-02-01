@@ -29,8 +29,8 @@ namespace AlienRP.Controls
     public partial class QualityButtonsControl : UserControl
     {
         private RadioButton[] qualityButtons;
-        private string mp3Icon = "";
-        private string aacIcon = "";
+        //private string mp3Icon = "";
+        //private string aacIcon = "";
 
         public QualityButtonsControl()
         {
@@ -51,12 +51,14 @@ namespace AlienRP.Controls
                 {
                     case "MP3":
                         {
-                            qualityButton.Tag = mp3Icon;
+                            //qualityButton.Tag = mp3Icon;
+                            qualityButton.Tag = "MP3";
                             break;
                         }
                     case "AAC":
                         {
-                            qualityButton.Tag = aacIcon;
+                            //qualityButton.Tag = aacIcon;
+                            qualityButton.Tag = "AAC";
                             break;
                         }
                 }

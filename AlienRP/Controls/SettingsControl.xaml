@@ -41,8 +41,6 @@
                         <res:QualityButtonsControl x:Name="qualityControl" />
 
                         <res:HotkeysControl Margin="0, 20, 0, 0" x:Name="hotkeysControl" />
-
-                        <res:UserSettingsControl Margin="0, 20, 0, 0" x:Name="userSettingsControl" />
                     </StackPanel>
                 </ScrollViewer>
 

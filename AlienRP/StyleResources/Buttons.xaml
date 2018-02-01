@@ -289,8 +289,10 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-
-                            <TextBlock Margin="5, 0, 0, 0" Grid.Column="0" x:Name="PART_Icon" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Tag}" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource FontIcon}" Foreground="{StaticResource AccentColor1}" FontSize="34"></TextBlock>
+                            <Border Margin="5, 0, 0, 0" CornerRadius="6" Height="20" Width="36" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Background="{StaticResource AccentColor1}">
+                                <TextBlock x:Name="PART_Icon" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Tag}" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource FontRegular}" Foreground="{StaticResource MainColor1}" FontSize="14" />
+                            </Border>
+                            <!--<TextBlock Margin="5, 0, 0, 0" Grid.Column="0" x:Name="PART_Icon" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Tag}" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource FontIcon}" Foreground="{StaticResource AccentColor1}" FontSize="34"></TextBlock>-->
                             <TextBlock Grid.Column="1" x:Name="PART_Quality" Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource FontRegular}" Foreground="{StaticResource LightFontColor1}" FontSize="14"></TextBlock>
                         </Grid>
                     </Border>

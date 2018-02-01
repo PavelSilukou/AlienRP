@@ -54,7 +54,6 @@ namespace AlienRP.Controls
         {
             qualityControl.LoadQualityButtons();
             hotkeysControl.LoadHotkeys();
-            userSettingsControl.LoadUserSettings();
         }
     }
 }

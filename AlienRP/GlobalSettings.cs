@@ -283,6 +283,42 @@ namespace AlienRP
 
             Properties.Settings.Default.Save();
         }
+
+        public static string GetAlienRPVersion()
+        {
+            return Properties.Settings.Default.arpVersion;
+        }
+
+        public static void SaveAlienRPVersion(string version)
+        {
+            Properties.Settings.Default.arpVersion = version;
+
+            Properties.Settings.Default.Save();
+        }
+
+        public static int GetARPUserID()
+        {
+            return Properties.Settings.Default.arpUserID;
+        }
+
+        public static void SaveARPUserID(int id)
+        {
+            Properties.Settings.Default.arpUserID = id;
+
+            Properties.Settings.Default.Save();
+        }
+
+        public static bool GetARPAPIEnabled()
+        {
+            return Properties.Settings.Default.arpAPIEnabled;
+        }
+
+        public static void SaveARPAPIEnabledStatus(bool status)
+        {
+            Properties.Settings.Default.arpAPIEnabled = status;
+
+            Properties.Settings.Default.Save();
+        }
     }
 
     public class WindowPosition

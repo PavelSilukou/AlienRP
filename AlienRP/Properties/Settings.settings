@@ -71,5 +71,14 @@
     <Setting Name="mainWindowCollapsedHeight" Type="System.Double" Scope="User">
       <Value Profile="(Default)">186</Value>
     </Setting>
+    <Setting Name="arpVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2.0.0</Value>
+    </Setting>
+    <Setting Name="arpUserID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="arpAPIEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

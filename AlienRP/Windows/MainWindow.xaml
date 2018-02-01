@@ -127,6 +127,10 @@
                                 <res:RadioChannelsControl x:Name="radioChannelsControl"/>
                             </TabItem>
 
+                            <TabItem Selector.Selected="AboutTabItemSelected" x:Name="aboutTabItem" DockPanel.Dock="Right" HorizontalAlignment="Right" Style="{StaticResource MainMenuTabItemIconStyle}" Header="">
+                                <res:AboutControl x:Name="aboutControl" />
+                            </TabItem>
+
                             <TabItem Selector.Selected="SettingsTabItemSelected" x:Name="settingsTabItem" DockPanel.Dock="Right" HorizontalAlignment="Right" Style="{StaticResource MainMenuTabItemIconStyle}" Header="">
                                 <res:SettingsControl x:Name="settingsControl" />
                             </TabItem>

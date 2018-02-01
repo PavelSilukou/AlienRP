@@ -51,33 +51,40 @@ namespace AlienRP
             
             RemoveAllHotkeys();
 
-            if (keys[0] != 0)
+            try
             {
-                HotkeyManager.Current.AddOrReplace("Play", keys[0], ModifierKeys.Control | ModifierKeys.Shift, OnPlayGlobal);
+                if (keys[0] != 0)
+                {
+                    HotkeyManager.Current.AddOrReplace("Play", keys[0], ModifierKeys.Control | ModifierKeys.Shift, OnPlayGlobal);
+                }
+                if (keys[1] != 0)
+                {
+                    HotkeyManager.Current.AddOrReplace("VolumeUp", keys[1], ModifierKeys.Control | ModifierKeys.Shift, OnVolumeUpGlobal);
+                }
+                if (keys[2] != 0)
+                {
+                    HotkeyManager.Current.AddOrReplace("VolumeDown", keys[2], ModifierKeys.Control | ModifierKeys.Shift, OnVolumeDownGlobal);
+                }
+                if (keys[3] != 0)
+                {
+                    HotkeyManager.Current.AddOrReplace("Mute", keys[3], ModifierKeys.Control | ModifierKeys.Shift, OnVolumeMuteGlobal);
+                }
+                if (keys[4] != 0)
+                {
+                    HotkeyManager.Current.AddOrReplace("VoteUp", keys[4], ModifierKeys.Control | ModifierKeys.Shift, OnVoteUpGlobal);
+                }
+                if (keys[5] != 0)
+                {
+                    HotkeyManager.Current.AddOrReplace("VoteDown", keys[5], ModifierKeys.Control | ModifierKeys.Shift, OnVoteDownGlobal);
+                }
+                if (keys[6] != 0)
+                {
+                    HotkeyManager.Current.AddOrReplace("VoteDelete", keys[6], ModifierKeys.Control | ModifierKeys.Shift, OnVoteDeleteGlobal);
+                }
             }
-            if (keys[1] != 0)
+            catch (NHotkey.HotkeyAlreadyRegisteredException)
             {
-                HotkeyManager.Current.AddOrReplace("VolumeUp", keys[1], ModifierKeys.Control | ModifierKeys.Shift, OnVolumeUpGlobal);
-            }
-            if (keys[2] != 0)
-            {
-                HotkeyManager.Current.AddOrReplace("VolumeDown", keys[2], ModifierKeys.Control | ModifierKeys.Shift, OnVolumeDownGlobal);
-            }
-            if (keys[3] != 0)
-            {
-                HotkeyManager.Current.AddOrReplace("Mute", keys[3], ModifierKeys.Control | ModifierKeys.Shift, OnVolumeMuteGlobal);
-            }
-            if (keys[4] != 0)
-            {
-                HotkeyManager.Current.AddOrReplace("VoteUp", keys[4], ModifierKeys.Control | ModifierKeys.Shift, OnVoteUpGlobal);
-            }
-            if (keys[5] != 0)
-            {
-                HotkeyManager.Current.AddOrReplace("VoteDown", keys[5], ModifierKeys.Control | ModifierKeys.Shift, OnVoteDownGlobal);
-            }
-            if (keys[6] != 0)
-            {
-                HotkeyManager.Current.AddOrReplace("VoteDelete", keys[6], ModifierKeys.Control | ModifierKeys.Shift, OnVoteDeleteGlobal);
+
             }
         }
 

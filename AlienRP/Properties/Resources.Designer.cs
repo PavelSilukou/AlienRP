@@ -61,6 +61,96 @@ namespace AlienRP.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check version.
+        /// </summary>
+        public static string AboutControl_CheckVersionButton {
+            get {
+                return ResourceManager.GetString("AboutControl_CheckVersionButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current version: .
+        /// </summary>
+        public static string AboutControl_CurrentVersion {
+            get {
+                return ResourceManager.GetString("AboutControl_CurrentVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to AlienRP.com.
+        /// </summary>
+        public static string AboutControl_GoToAlienRPButton {
+            get {
+                return ResourceManager.GetString("AboutControl_GoToAlienRPButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are logged as .
+        /// </summary>
+        public static string AboutControl_LoginInfo {
+            get {
+                return ResourceManager.GetString("AboutControl_LoginInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log out.
+        /// </summary>
+        public static string AboutControl_LogoutButton {
+            get {
+                return ResourceManager.GetString("AboutControl_LogoutButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New version of AlienRP is available: .
+        /// </summary>
+        public static string AboutControl_NewVersionAvailable {
+            get {
+                return ResourceManager.GetString("AboutControl_NewVersionAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AlienRP is up to date.
+        /// </summary>
+        public static string AboutControl_NewVersionUnavailable {
+            get {
+                return ResourceManager.GetString("AboutControl_NewVersionUnavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string AboutControl_ProgramInfoTitle {
+            get {
+                return ResourceManager.GetString("AboutControl_ProgramInfoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Technical info.
+        /// </summary>
+        public static string AboutControl_TechnicalInfoTitle {
+            get {
+                return ResourceManager.GetString("AboutControl_TechnicalInfoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string AboutControl_UserTitle {
+            get {
+                return ResourceManager.GetString("AboutControl_UserTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string ARPMessageBox_Cancel {
@@ -133,6 +223,26 @@ namespace AlienRP.Properties {
             get {
                 object obj = ResourceManager.GetObject("di_text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] font_icon {
+            get {
+                object obj = ResourceManager.GetObject("font_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] font_regular {
+            get {
+                object obj = ResourceManager.GetObject("font_regular", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -286,16 +396,6 @@ namespace AlienRP.Properties {
         public static string HotkeysControl_Title {
             get {
                 return ResourceManager.GetString("HotkeysControl_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] icomoon {
-            get {
-                object obj = ResourceManager.GetObject("icomoon", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
@@ -546,16 +646,6 @@ namespace AlienRP.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] NotoSans_Regular {
-            get {
-                object obj = ResourceManager.GetObject("NotoSans_Regular", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Unknown error. Please try again later.
         /// </summary>
         public static string PlayerControl_BadRequestError {
@@ -763,33 +853,6 @@ namespace AlienRP.Properties {
             get {
                 object obj = ResourceManager.GetObject("tunes_text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You are logged as .
-        /// </summary>
-        public static string UserSettingsControl_LoginInfo {
-            get {
-                return ResourceManager.GetString("UserSettingsControl_LoginInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Log out.
-        /// </summary>
-        public static string UserSettingsControl_LogoutButton {
-            get {
-                return ResourceManager.GetString("UserSettingsControl_LogoutButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User.
-        /// </summary>
-        public static string UserSettingsControl_Title {
-            get {
-                return ResourceManager.GetString("UserSettingsControl_Title", resourceCulture);
             }
         }
     }

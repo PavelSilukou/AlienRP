@@ -132,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlienRPAPI.cs" />
+    <Compile Include="Controls\AboutControl.xaml.cs">
+      <DependentUpon>AboutControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\HotkeysControl.xaml.cs">
       <DependentUpon>HotkeysControl.xaml</DependentUpon>
     </Compile>
@@ -143,9 +147,6 @@
     </Compile>
     <Compile Include="Controls\RadioStationsControl.xaml.cs">
       <DependentUpon>RadioStationsControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\UserSettingsControl.xaml.cs">
-      <DependentUpon>UserSettingsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Elements\HotkeyItem.xaml.cs">
       <DependentUpon>HotkeyItem.xaml</DependentUpon>
@@ -179,6 +180,11 @@
     </Compile>
     <Compile Include="GlobalHotkeyManager.cs" />
     <Compile Include="Hotkeys.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -188,12 +194,11 @@
     <Compile Include="Elements\LoadingControl.xaml.cs">
       <DependentUpon>LoadingControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Settings.cs" />
+    <Page Include="Controls\AboutControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\HotkeysControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -209,10 +214,6 @@
     <Page Include="Controls\RadioStationsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\UserSettingsControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Elements\HotkeyItem.xaml">
       <SubType>Designer</SubType>
@@ -334,10 +335,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <Resource Include="Resources\fonts\icomoon.ttf">
+    <Resource Include="Resources\fonts\font_regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\fonts\NotoSans-Regular.ttf">
+    <Resource Include="Resources\fonts\font_icon.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

@@ -301,12 +301,6 @@
     <value>Save</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icomoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fonts\icomoon.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NotoSans_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fonts\NotoSans-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="classical_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images\classical_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -349,13 +343,40 @@
   <data name="MainWindow_SelectStation" xml:space="preserve">
     <value>Select a station from the list below</value>
   </data>
-  <data name="UserSettingsControl_LoginInfo" xml:space="preserve">
+  <data name="AboutControl_LoginInfo" xml:space="preserve">
     <value>You are logged as </value>
   </data>
-  <data name="UserSettingsControl_LogoutButton" xml:space="preserve">
+  <data name="AboutControl_LogoutButton" xml:space="preserve">
     <value>Log out</value>
   </data>
-  <data name="UserSettingsControl_Title" xml:space="preserve">
+  <data name="AboutControl_UserTitle" xml:space="preserve">
     <value>User</value>
+  </data>
+  <data name="AboutControl_CheckVersionButton" xml:space="preserve">
+    <value>Check version</value>
+  </data>
+  <data name="AboutControl_CurrentVersion" xml:space="preserve">
+    <value>Current version: </value>
+  </data>
+  <data name="AboutControl_GoToAlienRPButton" xml:space="preserve">
+    <value>Go to AlienRP.com</value>
+  </data>
+  <data name="AboutControl_NewVersionAvailable" xml:space="preserve">
+    <value>New version of AlienRP is available: </value>
+  </data>
+  <data name="AboutControl_NewVersionUnavailable" xml:space="preserve">
+    <value>AlienRP is up to date</value>
+  </data>
+  <data name="AboutControl_ProgramInfoTitle" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutControl_TechnicalInfoTitle" xml:space="preserve">
+    <value>Technical info</value>
+  </data>
+  <data name="font_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fonts\font_icon.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="font_regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fonts\font_regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

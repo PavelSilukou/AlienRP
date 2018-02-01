@@ -298,5 +298,41 @@ namespace AlienRP.Properties {
                 this["mainWindowCollapsedHeight"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.0.0")]
+        public string arpVersion {
+            get {
+                return ((string)(this["arpVersion"]));
+            }
+            set {
+                this["arpVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int arpUserID {
+            get {
+                return ((int)(this["arpUserID"]));
+            }
+            set {
+                this["arpUserID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool arpAPIEnabled {
+            get {
+                return ((bool)(this["arpAPIEnabled"]));
+            }
+            set {
+                this["arpAPIEnabled"] = value;
+            }
+        }
     }
 }

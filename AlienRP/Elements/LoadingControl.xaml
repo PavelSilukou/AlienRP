@@ -32,7 +32,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Text="" FontFamily="{StaticResource FontIcon}" Name="Icon" VerticalAlignment="Bottom" FontSize="14" Foreground="{StaticResource AccentColor1}">
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Text="" FontFamily="{StaticResource FontIcon}" Name="Icon" VerticalAlignment="Bottom" FontSize="14" Foreground="{StaticResource AccentColor1}">
             <TextBlock.RenderTransform>
                 <RotateTransform x:Name="PART_Rotate" Angle="0"/>
             </TextBlock.RenderTransform>
