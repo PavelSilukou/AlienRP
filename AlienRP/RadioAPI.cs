@@ -238,7 +238,14 @@ namespace AlienRP
                     channel.name = json["channels"][i]["name"].ToString();
 
                     string imageUrl = radioData.GetStationBanner(json["channels"][i]["images"]);
-                    imageUrl = "http:" + imageUrl.Substring(0, imageUrl.IndexOf("png") + 3);
+
+                    int imageFormatIndex = imageUrl.IndexOf("jpg");
+                    if (imageFormatIndex == -1)
+                    {
+                        imageFormatIndex = imageUrl.IndexOf("png");
+                    }
+
+                    imageUrl = "http:" + imageUrl.Substring(0, imageFormatIndex + 3);
                     channel.imageUrl = imageUrl;
 
                     channels.Add(channel);
