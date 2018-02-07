@@ -141,7 +141,7 @@ namespace AlienRP.Controls
             {
                 case -1:
                     {
-                        soundBar.Value -= 5;
+                        soundBar.Value -= 0.1f;
                         break;
                     }
                 case 0:
@@ -151,7 +151,7 @@ namespace AlienRP.Controls
                     }
                 case 1:
                     {
-                        soundBar.Value += 5;
+                        soundBar.Value += 0.1f;
                         break;
                     }
             }
