@@ -298,5 +298,17 @@ namespace AlienRP.Properties {
                 this["mainWindowCollapsedHeight"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool autoLogin {
+            get {
+                return ((bool)(this["autoLogin"]));
+            }
+            set {
+                this["autoLogin"] = value;
+            }
+        }
     }
 }

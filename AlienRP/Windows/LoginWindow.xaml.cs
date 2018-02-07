@@ -1,7 +1,7 @@
 ﻿/* 
 * ***** BEGIN GPL LICENSE BLOCK*****
 
-* Copyright © 2017 Pavel Silukou
+* Copyright © 2017-2018 Pavel Silukou
 
 * This file is part of AlienRP.
 
@@ -36,17 +36,71 @@ namespace AlienRP.Windows
         public LoginWindow()
         {
             InitializeComponent();
-            
-            loginButtonLoading.SetParameters(36);
+
+            InitBasicLoginWindow();
+
+            if (rememberAutoLoginCheckBoxes.GetAutoLoginStatus())
+            {
+                InitAutoLoginWindow();
+            }
+            else
+            {
+                InitManualLoginWindow();
+            }
+        }
+
+        private void InitBasicLoginWindow()
+        {
+            loginWorker.DoWork += LoginWorker;
+            loginWorker.RunWorkerCompleted += LoginWorkerCompleted;
+
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
             LoginData loginData = GlobalSettings.GetLoginData();
-            rememberMeCheckBox.IsChecked = loginData.rememberMe;
+            rememberAutoLoginCheckBoxes.SetCheckStatus(loginData.rememberMe, loginData.autoLogin);
             emailTextBox.Text = loginData.email;
             passwordTextBox.Password = loginData.password;
-            
-            loginWorker.DoWork += LoginWorker;
-            loginWorker.RunWorkerCompleted += LoginWorkerCompleted;
+        }
+
+        public LoginWindow(bool isManual)
+        {
+            InitializeComponent();
+
+            InitBasicLoginWindow();
+            InitManualLoginWindow();
+        }
+
+        private void InitManualLoginWindow()
+        {
+            manualLogin.Visibility = Visibility.Visible;
+            autoLogin.Visibility = Visibility.Collapsed;
+
+            loginButtonLoading.SetParameters(36);
+            collapseButton.Visibility = Visibility.Visible;
+
+            LoginWindowName.Width = 360;
+        }
+
+        private void InitAutoLoginWindow()
+        {
+            manualLogin.Visibility = Visibility.Collapsed;
+            autoLogin.Visibility = Visibility.Visible;
+
+            autoLoginLoading.SetParameters(72);
+            collapseButton.Visibility = Visibility.Collapsed;
+
+            LoginWindowName.Width = 250;
+
+            AutoLogin();
+        }
+
+        private void AutoLogin()
+        {
+            object[] parameters = new object[] { emailTextBox.Text, passwordTextBox.Password };
+            if (!loginWorker.IsBusy)
+            {
+                loginWorker.RunWorkerAsync(parameters);
+            }
         }
 
         private void LoginButtonClick(object sender, RoutedEventArgs e)
@@ -101,7 +155,7 @@ namespace AlienRP.Windows
         {
             emailTextBox.IsEnabled = isEnable;
             passwordTextBox.IsEnabled = isEnable;
-            rememberMeCheckBox.IsEnabled = isEnable;
+            rememberAutoLoginCheckBoxes.IsEnabled = isEnable;
             socialLinkButton.IsEnabled = isEnable;
             forgotLinkButton.IsEnabled = isEnable;
         }
@@ -116,6 +170,8 @@ namespace AlienRP.Windows
         {
             if (e.Error != null)
             {
+                InitManualLoginWindow();
+
                 if (e.Error is InternetException)
                 {
                     generalErrorLabel1.Visibility = Visibility.Visible;
@@ -142,7 +198,8 @@ namespace AlienRP.Windows
                 LoginData loginData = new LoginData();
                 loginData.email = emailTextBox.Text;
                 loginData.password = passwordTextBox.Password;
-                loginData.rememberMe = rememberMeCheckBox.IsChecked.Value;
+                loginData.rememberMe = rememberAutoLoginCheckBoxes.GetRememberMeStatus();
+                loginData.autoLogin = rememberAutoLoginCheckBoxes.GetAutoLoginStatus();
 
                 GlobalSettings.SaveLoginData(loginData);
 

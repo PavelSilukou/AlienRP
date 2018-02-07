@@ -1,7 +1,7 @@
 ﻿/* 
 * ***** BEGIN GPL LICENSE BLOCK*****
 
-* Copyright © 2017 Pavel Silukou
+* Copyright © 2017-2018 Pavel Silukou
 
 * This file is part of AlienRP.
 
@@ -26,6 +26,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Shapes;
 using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace AlienRP.Windows
 {
@@ -33,6 +34,7 @@ namespace AlienRP.Windows
     {
         private bool isCollapsed = false;
         public static MainWindow Instance { get; private set; }
+        private System.Drawing.Rectangle workingArea;
 
         public MainWindow()
         {
@@ -47,13 +49,18 @@ namespace AlienRP.Windows
             if (windowPosition.height == 0)
             {
                 WindowPosition initialWindowPosition = new WindowPosition();
-                Rect desktopWorkingArea = System.Windows.SystemParameters.WorkArea;
+                //Rect desktopWorkingArea = System.Windows.SystemParameters.WorkArea;
+                workingArea = Screen.FromHandle(new System.Windows.Interop.WindowInteropHelper(this).Handle).WorkingArea;
 
                 this.MinHeight = 600;
 
-                this.Height = desktopWorkingArea.Height;
-                this.Left = desktopWorkingArea.Right - this.Width;
-                this.Top = desktopWorkingArea.Bottom - this.Height;
+                //this.Height = desktopWorkingArea.Height;
+                //this.Left = desktopWorkingArea.Right - this.Width;
+                //this.Top = desktopWorkingArea.Bottom - this.Height;
+
+                this.Height = workingArea.Height;
+                this.Left = workingArea.Right - this.Width;
+                this.Top = workingArea.Bottom - this.Height;
 
                 initialWindowPosition.height = this.Height;
                 initialWindowPosition.left = this.Left;
@@ -117,7 +124,7 @@ namespace AlienRP.Windows
             }
         }
 
-        private void ResizeingForm(object sender, MouseEventArgs e)
+        private void ResizeingForm(object sender, System.Windows.Input.MouseEventArgs e)
         {
             if (ResizeInProcess)
             {
@@ -131,8 +138,11 @@ namespace AlienRP.Windows
                     Point pointToWindow = Mouse.GetPosition(this);
                     Point pointToScreen = PointToScreen(pointToWindow);
 
-                    double screenTop = System.Windows.SystemParameters.WorkArea.Top;
-                    double screenBottom = System.Windows.SystemParameters.WorkArea.Bottom;
+                    //double screenTop = System.Windows.SystemParameters.WorkArea.Top;
+                    //double screenBottom = System.Windows.SystemParameters.WorkArea.Bottom;
+
+                    double screenTop = workingArea.Top;
+                    double screenBottom = workingArea.Bottom;
 
                     senderRect.CaptureMouse();
                     if (senderRect.Name.ToLower().Contains("right"))
@@ -214,10 +224,18 @@ namespace AlienRP.Windows
         {
             this.DragMove();
 
-            double screenLeft = System.Windows.SystemParameters.WorkArea.Left;
-            double screenRight = System.Windows.SystemParameters.WorkArea.Right;
-            double screenTop = System.Windows.SystemParameters.WorkArea.Top;
-            double screenBottom = System.Windows.SystemParameters.WorkArea.Bottom;
+            Screen screen = Screen.FromHandle(new System.Windows.Interop.WindowInteropHelper(this).Handle);
+            workingArea = screen.WorkingArea;
+
+            //double screenLeft = System.Windows.SystemParameters.WorkArea.Left;
+            //double screenRight = System.Windows.SystemParameters.WorkArea.Right;
+            //double screenTop = System.Windows.SystemParameters.WorkArea.Top;
+            //double screenBottom = System.Windows.SystemParameters.WorkArea.Bottom;
+
+            double screenLeft = workingArea.Left;
+            double screenRight = workingArea.Right;
+            double screenTop = workingArea.Top;
+            double screenBottom = workingArea.Bottom;
 
             if (MainWindowName.Top + MainWindowName.Height > screenBottom - 10)
             {
@@ -307,7 +325,7 @@ namespace AlienRP.Windows
             playerControl.LogoutAction();
             PlayerSettings.ClearChannelInfo();
 
-            LoginWindow loginWindow = new LoginWindow();
+            LoginWindow loginWindow = new LoginWindow(true);
             loginWindow.Show();
             this.Close();
         }

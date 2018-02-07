@@ -71,5 +71,8 @@
     <Setting Name="mainWindowCollapsedHeight" Type="System.Double" Scope="User">
       <Value Profile="(Default)">186</Value>
     </Setting>
+    <Setting Name="autoLogin" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

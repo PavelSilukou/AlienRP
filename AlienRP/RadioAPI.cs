@@ -1,7 +1,7 @@
 ﻿/* 
 * ***** BEGIN GPL LICENSE BLOCK*****
 
-* Copyright © 2017 Pavel Silukou
+* Copyright © 2017-2018 Pavel Silukou
 
 * This file is part of AlienRP.
 

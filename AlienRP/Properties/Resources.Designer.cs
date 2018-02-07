@@ -329,6 +329,24 @@ namespace AlienRP.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatic login.
+        /// </summary>
+        public static string LoginWindow_AutoLogin {
+            get {
+                return ResourceManager.GetString("LoginWindow_AutoLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging in....
+        /// </summary>
+        public static string LoginWindow_AutoLoginProcess {
+            get {
+                return ResourceManager.GetString("LoginWindow_AutoLoginProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to EMAIL.
         /// </summary>
         public static string LoginWindow_EmailCaption {
@@ -383,7 +401,7 @@ namespace AlienRP.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LOGIN.
+        ///   Looks up a localized string similar to LOG IN.
         /// </summary>
         public static string LoginWindow_FormTitle {
             get {
