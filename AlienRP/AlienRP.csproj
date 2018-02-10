@@ -148,9 +148,6 @@
     <Compile Include="Controls\UserSettingsControl.xaml.cs">
       <DependentUpon>UserSettingsControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Elements\RememberAutoLoginCheckBoxes.xaml.cs">
-      <DependentUpon>RememberAutoLoginCheckBoxes.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Elements\HotkeyItem.xaml.cs">
       <DependentUpon>HotkeyItem.xaml</DependentUpon>
     </Compile>
@@ -215,10 +212,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\UserSettingsControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Elements\RememberAutoLoginCheckBoxes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

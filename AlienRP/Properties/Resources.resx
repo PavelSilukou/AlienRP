@@ -135,9 +135,6 @@
   <data name="LoginWindow_FormTitle" xml:space="preserve">
     <value>LOG IN</value>
   </data>
-  <data name="LoginWindow_RememberMe" xml:space="preserve">
-    <value>Remember me</value>
-  </data>
   <data name="LoginWindow_LoginButton" xml:space="preserve">
     <value>Log in</value>
   </data>

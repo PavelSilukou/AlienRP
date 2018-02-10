@@ -39,7 +39,7 @@ namespace AlienRP.Windows
 
             InitBasicLoginWindow();
 
-            if (rememberAutoLoginCheckBoxes.GetAutoLoginStatus())
+            if (autoLoginCheckBox.IsChecked.Value)
             {
                 InitAutoLoginWindow();
             }
@@ -57,7 +57,7 @@ namespace AlienRP.Windows
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
             LoginData loginData = GlobalSettings.GetLoginData();
-            rememberAutoLoginCheckBoxes.SetCheckStatus(loginData.rememberMe, loginData.autoLogin);
+            autoLoginCheckBox.IsChecked = loginData.autoLogin;
             emailTextBox.Text = loginData.email;
             passwordTextBox.Password = loginData.password;
         }
@@ -155,7 +155,7 @@ namespace AlienRP.Windows
         {
             emailTextBox.IsEnabled = isEnable;
             passwordTextBox.IsEnabled = isEnable;
-            rememberAutoLoginCheckBoxes.IsEnabled = isEnable;
+            autoLoginCheckBox.IsEnabled = isEnable;
             socialLinkButton.IsEnabled = isEnable;
             forgotLinkButton.IsEnabled = isEnable;
         }
@@ -198,8 +198,7 @@ namespace AlienRP.Windows
                 LoginData loginData = new LoginData();
                 loginData.email = emailTextBox.Text;
                 loginData.password = passwordTextBox.Password;
-                loginData.rememberMe = rememberAutoLoginCheckBoxes.GetRememberMeStatus();
-                loginData.autoLogin = rememberAutoLoginCheckBoxes.GetAutoLoginStatus();
+                loginData.autoLogin = autoLoginCheckBox.IsChecked.Value;
 
                 GlobalSettings.SaveLoginData(loginData);
 

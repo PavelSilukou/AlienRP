@@ -464,15 +464,6 @@ namespace AlienRP.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remember me.
-        /// </summary>
-        public static string LoginWindow_RememberMe {
-            get {
-                return ResourceManager.GetString("LoginWindow_RememberMe", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Go to the account page page on {0}.
         /// </summary>
         public static string LoginWindow_SocialLink {

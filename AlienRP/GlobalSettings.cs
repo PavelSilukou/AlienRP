@@ -209,7 +209,7 @@ namespace AlienRP
                 IsolatedStorageFile isolatedStorage = IsolatedStorageFile.GetUserStoreForAssembly();
                 StreamWriter srWriter = new StreamWriter(new IsolatedStorageFileStream("alienrpcredentials", FileMode.Create, isolatedStorage));
 
-                if (loginData.rememberMe == true)
+                if (loginData.autoLogin == true)
                 {
                     srWriter.WriteLine(Encrypt(loginData.email));
                     srWriter.WriteLine(Encrypt(loginData.password));
@@ -227,8 +227,7 @@ namespace AlienRP
             {
                 throw;
             }
-
-            Properties.Settings.Default.rememberMe = loginData.rememberMe;
+            
             Properties.Settings.Default.autoLogin = loginData.autoLogin;
             Properties.Settings.Default.Save();
         }
@@ -268,7 +267,6 @@ namespace AlienRP
 
             loginData.email = GlobalSettings.GetEmail();
             loginData.password = GlobalSettings.GetPassword();
-            loginData.rememberMe = Properties.Settings.Default.rememberMe;
             loginData.autoLogin = Properties.Settings.Default.autoLogin;
 
             return loginData;
@@ -325,7 +323,6 @@ namespace AlienRP
     {
         public string email;
         public string password;
-        public bool rememberMe;
         public bool autoLogin;
     }
 }
